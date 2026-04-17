@@ -1,20 +1,128 @@
-/* navbar styles */
-.navbar {
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND */
+.main {
+  padding: 30px;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(135deg, #dff5ec, #fdecef),
+    url("https://www.transparenttextures.com/patterns/flowers.png");
+}
+
+/* NAV */
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2ECC71;
-  padding: 15px 20px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* BUTTONS */
+.btn-green {
+  background: linear-gradient(135deg, #2ECC71, #A9DFBF);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+}
+
+.btn-pink {
+  background: linear-gradient(135deg, #F5B7CF, #FDECEF);
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+}
+
+/* DONUT CENTER */
+.chartWrapper {
+  position: relative;
+}
+
+.centerText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #2ECC71;
   color: white;
 }
 
-.nav-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
+.card.pink button {
+  background: #F5B7CF;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+/* INSIGHTS */
+.insights {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
 }
+
+.insight {
+  flex: 1;
+  padding: 20px;
+}
+
+/* BAR GRAPH */
+.bars {
+  display: flex;
+  gap: 8px;
+  height: 100px;
+  align-items: flex-end;
+}
+
+.bars span {
+  width: 15px;
+  background: linear-gradient(#2ECC71, #F5B7CF);
+  border-radius: 5px;
+}
+
+.bars span:nth-child(1){height:40%;}
+.bars span:nth-child(2){height:60%;}
+.bars span:nth-child(3){height:50%;}
+.bars span:nth-child(4){height:80%;}
+.bars span:nth-child(5){height:65%;}
+.bars span:nth-child(6){height:90%;}
