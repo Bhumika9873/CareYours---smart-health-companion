@@ -214,102 +214,136 @@
 // }
 
 // export default Dashboard;
-import "../styles/dashboard.css";
+// Dashboard.jsx
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/Dashboard.css";
 
-function Dashboard() {
+// ICONS (tumhare saved)
+import { GiMedicines } from "react-icons/gi";
+import { PiCalendarHeartBold } from "react-icons/pi";
+import { LuBaby } from "react-icons/lu";
+import { VscFileSymlinkDirectory } from "react-icons/vsc";
+import { FaFirstAid } from "react-icons/fa";
+import { SlGraph } from "react-icons/sl";
+
+// CHARTS
+import PieAnimation from "../components/PieAnimation";
+import WeeklyBarChart from "../components/WeeklyBarChart";
+
+export default function Dashboard() {
   const navigate = useNavigate();
 
   return (
     <div className="dashboard">
 
       {/* NAVBAR */}
-      <div className="nav">
-        <h2>💚 CareYours</h2>
+      <div className="navbar glass">
+        <h2>CareYours</h2>
 
         <div className="nav-links">
           <span onClick={() => navigate("/")}>Home</span>
           <span onClick={() => navigate("/progress")}>Progress</span>
           <span onClick={() => navigate("/contact")}>Contact</span>
         </div>
+
+        <button className="logout-btn">Logout</button>
       </div>
 
       {/* HERO */}
-      <div className="hero">
+      <div className="hero glass">
 
         <div className="hero-left">
           <h1>Care that feels personal</h1>
           <p>Your smart health companion for daily tracking.</p>
 
           <div className="hero-btns">
-            <button onClick={() => navigate("/medication")} className="btn-green">
+            <button onClick={() => navigate("/medication")}>
               Medication
             </button>
 
-            <button onClick={() => navigate("/cycle")} className="btn-pink">
+            <button
+              className="pink-btn"
+              onClick={() => navigate("/period")}
+            >
               Period Tracker
             </button>
           </div>
         </div>
 
-        <div className="hero-right">
-          <div className="circle">
-            <span>62%</span>
-          </div>
-          <p>Today's Wellness</p>
+        <div className="hero-right glass">
+          <h3>Wellness Summary</h3>
+          <PieAnimation />
         </div>
-
       </div>
 
       {/* CARDS */}
       <div className="cards">
 
-        <Card title="Medication" onClick={() => navigate("/medication")} />
-        <Card title="Period Tracker" pink onClick={() => navigate("/cycle")} />
-        <Card title="Pregnancy" pink onClick={() => navigate("/pregnancy")} />
-        <Card title="Health Records" onClick={() => navigate("/records")} />
-        <Card title="SOS" pink onClick={() => navigate("/sos")} />
-        <Card title="Caregiver" onClick={() => navigate("/caregiver")} />
+        <div className="card glass" onClick={() => navigate("/medication")}>
+          <GiMedicines className="icon green" />
+          <h4>Medication</h4>
+          <button>Open</button>
+        </div>
+
+        <div className="card glass" onClick={() => navigate("/period")}>
+          <PiCalendarHeartBold className="icon pink" />
+          <h4>Period Tracker</h4>
+          <button className="pink-btn">Open</button>
+        </div>
+
+        <div className="card glass" onClick={() => navigate("/pregnancy")}>
+          <LuBaby className="icon pink" />
+          <h4>Pregnancy</h4>
+          <button className="pink-btn">Open</button>
+        </div>
+
+        <div className="card glass" onClick={() => navigate("/records")}>
+          <VscFileSymlinkDirectory className="icon green" />
+          <h4>Health Records</h4>
+          <button>Open</button>
+        </div>
+
+        <div className="card glass" onClick={() => navigate("/sos")}>
+          <FaFirstAid className="icon pink" />
+          <h4>SOS</h4>
+          <button className="pink-btn">Open</button>
+        </div>
+
+        <div className="card glass" onClick={() => navigate("/caregiver")}>
+          <SlGraph className="icon green" />
+          <h4>Caregiver</h4>
+          <button>Open</button>
+        </div>
 
       </div>
 
       {/* INSIGHTS */}
+      <h2 className="section-title">Insights</h2>
+
       <div className="insights">
 
-        <div className="insight-card">
-          <h3>Medication Reminder</h3>
-          <p>8:00 AM • 1 pill</p>
-          <button onClick={() => navigate("/medication")}>Mark Done</button>
+        <div className="card glass">
+          <h4>Medication Reminder</h4>
+          <p>8:00 AM · 1 pill</p>
+          <button>Mark Done</button>
         </div>
 
-        <div className="insight-card">
-          <h3>Weekly Progress</h3>
-
-          <div className="bars">
-            <div style={{height:"40%"}}></div>
-            <div style={{height:"60%"}}></div>
-            <div style={{height:"50%"}}></div>
-            <div style={{height:"80%"}}></div>
-            <div style={{height:"70%"}}></div>
-          </div>
-
+        <div className="card glass">
+          <h4>Weekly Progress</h4>
+          <WeeklyBarChart />
         </div>
 
+      </div>
+
+      {/* FOOTER */}
+      <div className="footer glass">
+        <span>Home</span>
+        <span>About</span>
+        <span>Progress</span>
+        <span>Contact</span>
       </div>
 
     </div>
   );
 }
-
-function Card({ title, pink, onClick }) {
-  return (
-    <div className={`card ${pink ? "pink" : ""}`} onClick={onClick}>
-      <h3>{title}</h3>
-      <button onClick={(e) => { e.stopPropagation(); onClick(); }}>
-        Open
-      </button>
-    </div>
-  );
-}
-
-export default Dashboard;
