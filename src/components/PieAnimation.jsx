@@ -1,7 +1,7 @@
 // PART 12 : PieAnimation.jsx (Replace Complete File)
 
 import {useEffect,useState} from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 
 export default function PieAnimation(){
 const[target]=useState(82);
