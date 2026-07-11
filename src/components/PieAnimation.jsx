@@ -1,48 +1,70 @@
-import { useEffect, useState } from "react";
+// PART 12 : PieAnimation.jsx (Replace Complete File)
 
-export default function PieAnimation() {
-  const [progress, setProgress] = useState(0);
-  const target = 62;
+import {useEffect,useState} from "react";
+import "./PieAnimation.css";
 
-  useEffect(() => {
-    let start = 0;
-    const interval = setInterval(() => {
-      start++;
-      setProgress(start);
-      if (start >= target) clearInterval(interval);
-    }, 20); // speed control
-  }, []);
+export default function PieAnimation(){
+const[target]=useState(82);
+const[progress,setProgress]=useState(0);
 
-  return (
-    <div
-      style={{
-        width: "150px",
-        height: "150px",
-        borderRadius: "50%",
-        background: `conic-gradient(#A8D38D ${progress}%, #E7FFCE 0)`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "background 0.3s ease"
-      }}
-    >
-      <div
-        style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "50%",
-          background: "#FFFFFF",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontWeight: "600",
-          color: "#2F4F2F",
-          fontSize: "18px",
-          transition: "all 0.3s ease"
-        }}
-      >
-        {progress}%
-      </div>
-    </div>
-  );
+useEffect(()=>{
+let start=0;
+const timer=setInterval(()=>{
+start++;
+setProgress(start);
+if(start>=target)clearInterval(timer);
+},18);
+return()=>clearInterval(timer);
+},[target]);
+
+return(
+<div className="pie-wrapper">
+
+<div
+className="pie-ring"
+style={{
+background:`conic-gradient(#7CB342 ${progress*3.6}deg,#E8F7DA 0deg)`
+}}
+>
+
+<div className="pie-inner">
+
+<h2>{progress}%</h2>
+
+<span>Excellent</span>
+
+</div>
+
+</div>
+
+<div className="pie-info">
+
+<div>
+
+<h4>Sleep</h4>
+
+<p>7.8 hrs</p>
+
+</div>
+
+<div>
+
+<h4>Water</h4>
+
+<p>2.4 L</p>
+
+</div>
+
+<div>
+
+<h4>Steps</h4>
+
+<p>8,524</p>
+
+</div>
+
+</div>
+
+</div>
+);
 }
