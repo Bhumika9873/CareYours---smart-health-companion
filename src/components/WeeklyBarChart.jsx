@@ -12,7 +12,7 @@ export default function WeeklyBarChart() {
         <div key={i} style={{
           width: "12px",
           height: val + "px",
-          background: "#2ECC71",
+          background: "#77cb9a",
           borderRadius: "6px"
         }}></div>
       ))}
