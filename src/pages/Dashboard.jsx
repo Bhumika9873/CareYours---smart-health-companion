@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Dashboard.css";
+import PieAnimation from "../components/PieAnimation";
 import {useNavigate} from "react-router-dom";
 import {FaHeartbeat} from "react-icons/fa";
 
