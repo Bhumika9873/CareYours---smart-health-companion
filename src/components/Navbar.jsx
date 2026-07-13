@@ -1,30 +1,47 @@
-import{Link,useLocation}from"react-router-dom";
-import{IoNotificationsOutline}from"react-icons/io5";
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+import { Bell, Menu, X } from "lucide-react";
+import { useState } from "react";
 
-function Navbar(){
-const{pathname}=useLocation();
-const active=(path)=>pathname===path?"active":"";
-return(
-<nav className="navbar">
-<Link to="/" className="logo">
-<div className="logo-icon">❤</div>
-<span>CareYours</span>
-</Link>
-<div className="nav-links">
-<Link to="/" className={active("/")}>Home</Link>
-<Link to="/medications" className={active("/medications")}>Medicine</Link>
-<Link to="/wellness" className={active("/wellness")}>Wellness</Link>
-<Link to="/period" className={active("/period")}>Period</Link>
-<Link to="/pregnancy" className={active("/pregnancy")}>Pregnancy</Link>
-<Link to="/records" className={active("/records")}>Records</Link>
-<Link to="/caregiver" className={active("/caregiver")}>Caregiver</Link>
-</div>
-<div className="nav-right">
-<button className="bell"><IoNotificationsOutline size={22}/></button>
-<button className="login-btn">Login</button>
-<button className="signup-btn">Sign Up</button>
-</div>
-</nav>
-);
+function Navbar() {
+  const [menu, setMenu] = useState(false);
+
+  return (
+    <nav className="navbar">
+      <div className="logo">
+        <span className="logoIcon">❤</span>
+        <h2>CareYours</h2>
+      </div>
+
+      <ul className={menu ? "navLinks active" : "navLinks"}>
+        <li><NavLink to="/">Dashboard</NavLink></li>
+        <li><NavLink to="/medications">Medications</NavLink></li>
+        <li><NavLink to="/wellness">Wellness</NavLink></li>
+        <li><NavLink to="/records">Records</NavLink></li>
+        <li><NavLink to="/period">Period</NavLink></li>
+        <li><NavLink to="/pregnancy">Pregnancy</NavLink></li>
+        <li><NavLink to="/caregiver">Caregiver</NavLink></li>
+      </ul>
+
+      <div className="rightSide">
+        <div className="notification">
+          <Bell size={22} />
+          <span>3</span>
+        </div>
+
+        <button className="loginBtn">Login</button>
+
+        <button className="signupBtn">Sign Up</button>
+
+        <button
+          className="menuBtn"
+          onClick={() => setMenu(!menu)}
+        >
+          {menu ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+    </nav>
+  );
 }
+
 export default Navbar;

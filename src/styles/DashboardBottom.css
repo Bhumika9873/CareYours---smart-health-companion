@@ -1,0 +1,168 @@
+.dashboardBottom{
+display:grid;
+grid-template-columns:1.2fr 1fr 1fr;
+gap:24px;
+}
+
+.appointmentCard,
+.scheduleCard,
+.notificationCard{
+background:#fff;
+border-radius:24px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.05);
+transition:.35s;
+}
+
+.appointmentCard:hover,
+.scheduleCard:hover,
+.notificationCard:hover{
+transform:translateY(-8px);
+}
+
+.cardHeading{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:28px;
+color:#5b4dff;
+}
+
+.cardHeading h2{
+font-size:24px;
+color:#111827;
+}
+
+.appointmentCard h3{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.appointmentCard p{
+color:#6b7280;
+margin-bottom:25px;
+}
+
+.appointmentInfo{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-bottom:30px;
+}
+
+.appointmentInfo span{
+background:#f4f5ff;
+padding:12px 16px;
+border-radius:12px;
+font-weight:500;
+}
+
+.appointmentCard button{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:#5b4dff;
+color:#fff;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.appointmentCard button:hover{
+background:#4338ca;
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.timelineItem{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.timelineIcon{
+width:52px;
+height:52px;
+border-radius:16px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#ede9fe;
+color:#5b4dff;
+}
+
+.timelineText h4{
+font-size:17px;
+margin-bottom:6px;
+}
+
+.timelineText p{
+font-size:14px;
+color:#6b7280;
+}
+
+.notifyItem{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+border-bottom:1px solid #ececec;
+}
+
+.notifyItem:last-child{
+border:none;
+}
+
+.notifyItem h4{
+font-size:16px;
+margin-bottom:5px;
+}
+
+.notifyItem p{
+font-size:14px;
+color:#6b7280;
+}
+
+.notifyDot{
+width:12px;
+height:12px;
+border-radius:50%;
+background:#5b4dff;
+box-shadow:0 0 12px #5b4dff;
+}
+
+@media(max-width:1200px){
+
+.dashboardBottom{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.appointmentCard,
+.scheduleCard,
+.notificationCard{
+padding:24px;
+}
+
+.cardHeading h2{
+font-size:20px;
+}
+
+.appointmentCard h3{
+font-size:24px;
+}
+
+}

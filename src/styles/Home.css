@@ -1,0 +1,207 @@
+.hero{
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:28px;
+align-items:center;
+}
+
+.heroLeft{
+background:#fff;
+border-radius:24px;
+padding:45px;
+box-shadow:0 15px 45px rgba(0,0,0,.05);
+}
+
+.welcomeBadge{
+display:inline-block;
+padding:8px 18px;
+background:#ede9fe;
+color:#5b4dff;
+border-radius:40px;
+font-size:14px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.heroLeft h1{
+font-size:50px;
+line-height:1.2;
+font-weight:700;
+margin-bottom:20px;
+color:#111827;
+}
+
+.heroLeft h1 span{
+color:#5b4dff;
+}
+
+.heroLeft p{
+font-size:17px;
+line-height:30px;
+color:#6b7280;
+max-width:650px;
+margin-bottom:35px;
+}
+
+.heroButtons{
+display:flex;
+gap:18px;
+}
+
+.primaryBtn{
+display:flex;
+align-items:center;
+gap:10px;
+padding:15px 28px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#5b4dff,#8b5cf6);
+color:#fff;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 15px 30px rgba(91,77,255,.35);
+}
+
+.primaryBtn:hover{
+transform:translateY(-4px);
+}
+
+.secondaryBtn{
+padding:15px 28px;
+background:#eef2ff;
+border:none;
+border-radius:14px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+}
+
+.secondaryBtn:hover{
+background:#dbe4ff;
+}
+
+.heroRight{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.aiCard,
+.sosCard{
+background:#fff;
+border-radius:22px;
+padding:28px;
+box-shadow:0 15px 45px rgba(0,0,0,.05);
+transition:.35s;
+}
+
+.aiCard:hover,
+.sosCard:hover{
+transform:translateY(-6px);
+}
+
+.cardTop{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:18px;
+color:#5b4dff;
+}
+
+.cardTop h3{
+font-size:20px;
+}
+
+.aiCard p,
+.sosCard p{
+font-size:15px;
+line-height:28px;
+color:#6b7280;
+margin-bottom:22px;
+}
+
+.aiCard button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+background:#5b4dff;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.aiCard button:hover{
+background:#4338ca;
+}
+
+.sosCard{
+background:linear-gradient(135deg,#ff4d6d,#ff758f);
+color:#fff;
+}
+
+.sosCard .cardTop{
+color:#fff;
+}
+
+.sosCard p{
+color:#ffecec;
+}
+
+.sosCard button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:14px;
+background:#fff;
+color:#ff4d6d;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.sosCard button:hover{
+transform:scale(1.03);
+}
+
+@media(max-width:1000px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.heroLeft{
+padding:35px;
+}
+
+.heroLeft h1{
+font-size:38px;
+}
+
+}
+
+@media(max-width:600px){
+
+.heroLeft{
+padding:25px;
+}
+
+.heroLeft h1{
+font-size:30px;
+}
+
+.heroButtons{
+flex-direction:column;
+}
+
+.primaryBtn,
+.secondaryBtn{
+width:100%;
+justify-content:center;
+}
+
+}

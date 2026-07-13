@@ -19,6 +19,16 @@ return(
 <Route path="/period" element={<PeriodTracker/>}/>
 <Route path="/pregnancy" element={<PregnancyTracker/>}/>
 <Route path="/caregiver" element={<CareGiver/>}/>
+<Route path="/login" element={<Login />} />
+<Route path="/signup" element={<Signup />} />
+<Route path="/profile" element={<Profile />} />
+<Route path="/appointments" element={<Appointments />} />
+<Route path="/notifications" element={<Notifications />} />
+<Route path="/assistant" element={<AIAssistant />} />
+<Route path="/water" element={<WaterTracker />} />
+<Route path="/sleep" element={<SleepTracker />} />
+<Route path="/steps" element={<StepsTracker />} />
+<Route path="*" element={<NotFound />} />
 </Routes>
 );
 }
