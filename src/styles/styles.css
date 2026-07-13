@@ -1,128 +1,84 @@
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
+.navbar{
+width:100%;
+height:78px;
+padding:0 60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#fff;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
-
-/* BACKGROUND */
-.main {
-  padding: 30px;
-  min-height: 100vh;
-
-  background:
-    linear-gradient(135deg, #dff5ec, #fdecef),
-    url("https://www.transparenttextures.com/patterns/flowers.png");
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:24px;
+font-weight:700;
+color:#5b4cf0;
 }
-
-/* NAV */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.logo-icon{
+width:42px;
+height:42px;
+border-radius:12px;
+background:linear-gradient(135deg,#7c6cff,#b388ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:20px;
 }
-
-/* HERO */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+.nav-links{
+display:flex;
+gap:32px;
 }
-
-/* GLASS */
-.glass {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.nav-links a{
+color:#666;
+font-size:15px;
+font-weight:500;
+transition:.3s;
 }
-
-/* BUTTONS */
-.btn-green {
-  background: linear-gradient(135deg, #2ECC71, #A9DFBF);
-  color: white;
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: none;
+.nav-links a:hover,.nav-links .active{
+color:#5b4cf0;
 }
-
-.btn-pink {
-  background: linear-gradient(135deg, #F5B7CF, #FDECEF);
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: none;
+.nav-right{
+display:flex;
+align-items:center;
+gap:16px;
 }
-
-/* DONUT CENTER */
-.chartWrapper {
-  position: relative;
+.bell{
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+background:#f3f3ff;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#5b4cf0;
+cursor:pointer;
 }
-
-.centerText {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
+.login-btn{
+padding:10px 22px;
+border:none;
+border-radius:12px;
+background:#f3f3ff;
+color:#5b4cf0;
+font-weight:600;
+cursor:pointer;
 }
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 40px;
+.signup-btn{
+padding:10px 22px;
+border:none;
+border-radius:12px;
+background:#6c63ff;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
 }
-
-.card {
-  padding: 20px;
-  cursor: pointer;
+.signup-btn:hover{
+background:#574bdb;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card button {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  background: #2ECC71;
-  color: white;
-}
-
-.card.pink button {
-  background: #F5B7CF;
-}
-
-/* INSIGHTS */
-.insights {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.insight {
-  flex: 1;
-  padding: 20px;
-}
-
-/* BAR GRAPH */
-.bars {
-  display: flex;
-  gap: 8px;
-  height: 100px;
-  align-items: flex-end;
-}
-
-.bars span {
-  width: 15px;
-  background: linear-gradient(#2ECC71, #F5B7CF);
-  border-radius: 5px;
-}
-
-.bars span:nth-child(1){height:40%;}
-.bars span:nth-child(2){height:60%;}
-.bars span:nth-child(3){height:50%;}
-.bars span:nth-child(4){height:80%;}
-.bars span:nth-child(5){height:65%;}
-.bars span:nth-child(6){height:90%;}

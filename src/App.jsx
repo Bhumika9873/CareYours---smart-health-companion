@@ -1,31 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./styles/styles.css";
-import Dashboard from "./pages/Dashboard.jsx";
-import Medications from "./pages/Medications.jsx";
-import Wellness from "./pages/Wellness.jsx";
-import HealthRecords from "./pages/HealthRecords.jsx";
-import PeriodTracker from "./pages/PeriodTracker.jsx";
-import PregnancyTracker from "./pages/PregnancyTracker.jsx";
-import Navbar from "./components/Navbar.jsx";
-import CareGiver from "./pages/CareGiver.jsx";
-import Emergency from "./pages/Emergency.jsx";
+import{Routes,Route}from"react-router-dom";
+import Dashboard from"./pages/Dashboard";
+import Medications from"./pages/Medications";
+import Wellness from"./pages/Wellness";
+import HealthRecords from"./pages/HealthRecords";
+import PeriodTracker from"./pages/PeriodTracker";
+import PregnancyTracker from"./pages/PregnancyTracker";
+import CareGiver from"./pages/CareGiver";
+import Emergency from"./pages/Emergency";
 
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/emergency" element={<Emergency />} />
-        <Route path="/medications" element={<Medications />} />
-        <Route path="/wellness" element={<Wellness />} />
-        <Route path="/records" element={<HealthRecords />} />
-        <Route path="/period" element={<PeriodTracker />} />
-        <Route path="/pregnancy" element={<PregnancyTracker />} />
-        <Route path="/caregiver" element={<CareGiver />} />
-      </Routes>
-    </BrowserRouter>
-  );
+function App(){
+return(
+<Routes>
+<Route path="/" element={<Dashboard/>}/>
+<Route path="/emergency" element={<Emergency/>}/>
+<Route path="/medications" element={<Medications/>}/>
+<Route path="/wellness" element={<Wellness/>}/>
+<Route path="/records" element={<HealthRecords/>}/>
+<Route path="/period" element={<PeriodTracker/>}/>
+<Route path="/pregnancy" element={<PregnancyTracker/>}/>
+<Route path="/caregiver" element={<CareGiver/>}/>
+</Routes>
+);
 }
-
 export default App;
